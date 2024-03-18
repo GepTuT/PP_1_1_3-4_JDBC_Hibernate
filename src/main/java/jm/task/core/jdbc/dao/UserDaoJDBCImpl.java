@@ -50,6 +50,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 System.out.println("Ошибка Update");
             }
             connection.commit();
+            System.out.println(new StringBuilder("User с именем - ").append(name).append(" добавлен в базу данных"));
         } catch (SQLException exception) {
             System.out.println("Ошибка при добавлении User");
         }
