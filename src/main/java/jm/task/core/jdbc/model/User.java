@@ -28,6 +28,22 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return new StringBuilder()
+                .append("User {")
+                .append("id='")
+                .append(this.id)
+                .append("', Name='")
+                .append(this.name)
+                .append("', Last Name='")
+                .append(this.lastName)
+                .append("', Age='")
+                .append(this.age)
+                .append("'}")
+                .toString();
+    }
+
     public Long getId() {
         return id;
     }
