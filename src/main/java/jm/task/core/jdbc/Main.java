@@ -2,12 +2,9 @@ package jm.task.core.jdbc;
 
 
 import jm.task.core.jdbc.dao.*;
-import jm.task.core.jdbc.util.*;
-
-import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
         UserDao userDao = new UserDaoJDBCImpl();
         userDao.createUsersTable();
         userDao.saveUser("Name1", "LastName1", (byte) 20);
