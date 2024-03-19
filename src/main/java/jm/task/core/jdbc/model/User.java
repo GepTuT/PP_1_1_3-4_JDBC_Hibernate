@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "users")
+@Table
 public class User {
     @Id
     private Long id;
