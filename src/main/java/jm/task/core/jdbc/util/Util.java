@@ -12,15 +12,13 @@ public class Util {
     private static final String PASSWORD = "mysql";
 
 
-    public static Connection getConnection() throws SQLException {
-        Connection connection = null;
+    public static Connection getConnection() {
         try {
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            connection.setAutoCommit(false);
+            return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             System.out.println("Нет соединения с БД");
         }
-        return connection;
+        return null;
     }
 
 }
