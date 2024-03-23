@@ -22,7 +22,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     "                (\n" +
                     "                    id        INT PRIMARY KEY AUTO_INCREMENT,\n" +
                     "                    name      VARCHAR(45) NOT NULL,\n" +
-                    "                    last_name VARCHAR(45) NOT NULL,\n" +
+                    "                    lastName VARCHAR(45) NOT NULL,\n" +
                     "                    age       INT(3)     NOT NULL\n" +
                     "                 )");
 
@@ -41,7 +41,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void saveUser(String name, String lastName, byte age) {
         try (PreparedStatement statement = connection
-                .prepareStatement("INSERT INTO users (name, last_name, age) VALUES (?,?,?)")) {
+                .prepareStatement("INSERT INTO users (name, lastName, age) VALUES (?,?,?)")) {
             connection.setAutoCommit(false);
             statement.setString(1, name);
             statement.setString(2, lastName);
@@ -80,7 +80,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public List<User> getAllUsers() {
         List<User> userList = new ArrayList<>();
-        try (PreparedStatement statement = connection.prepareStatement("SELECT id, name, last_name, age FROM users")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT id, name, lastName, age FROM users")) {
             connection.setAutoCommit(false);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
